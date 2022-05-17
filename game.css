@@ -1,0 +1,40 @@
+.content tr td {
+  width: 32px;
+  height: 32px;
+}
+
+.content button {
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
+  color: transparent;
+}
+
+.even {
+  background: #a2d149;
+}
+
+.odd {
+  background: #aad751;
+}
+
+.content button:hover {
+  background: #b9dd77;
+}
+
+.active {
+  background: #f00;
+  border-color: #f00;
+}
+
+.flag {
+  background: #f0f;
+}
+
+.bomb {
+  border: 1px solid #000;
+}

@@ -1,0 +1,77 @@
+@import url("game.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #191622;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background: #4a752c;
+}
+
+.gameInfos {
+  color: #fff;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dificulty {
+  width: 33.333%;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.333%;
+}
+
+.flagsCount,
+.time {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  margin: 0 5px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 33.333%;
+}
+
+.controls button {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  margin: 0 5px;
+  color: #fff;
+  cursor: pointer;
+}
