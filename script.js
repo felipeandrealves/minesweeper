@@ -28,6 +28,17 @@ class Board {
 
     this.boardAttributes = { w: 0, h: 0, count: 0 };
 
+    this.colors = [
+      "#DB3236",
+      "#4885ED",
+      "#48E6F1",
+      "#B648F2",
+      "#ED44B5",
+      "#F4840D",
+      "#F4C20D",
+      "#008744",
+    ];
+
     this.createBoard();
   }
 
@@ -53,14 +64,28 @@ class Board {
 
   gameOver() {
     this.gameStatus = 2;
+
     clearInterval(this.interval);
-    this.bombPositions.forEach((bomb) => {
+
+    this.bombPositions.forEach((bomb, index) => {
       const position = this.getTilePosition(bomb);
 
       const tile = document.getElementById(`tile${position}`);
 
-      tile.setAttribute("class", "active");
+      setTimeout(() => {
+        const color = this.getBombColor();
+
+        tile.style.background = color;
+
+        tile.setAttribute("class", `active ${[...tile.classList].join(" ")}`);
+      }, 250 * (index + Math.random() * 2));
     });
+  }
+
+  getBombColor() {
+    const random = Math.random() * 7;
+
+    return this.colors[Math.round(random)];
   }
 
   restart() {
@@ -177,7 +202,7 @@ class Board {
     const tile = document.getElementById(`tile${position}`);
 
     if (!tile.hasAttribute("clicked")) {
-      tile.setAttribute("class", "flag");
+      tile.setAttribute("class", `flag ${[...tile.classList].join(" ")}`);
       this.flagsCount--;
 
       const flags = document.getElementById("flags");
